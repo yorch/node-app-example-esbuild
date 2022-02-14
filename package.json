@@ -1,0 +1,19 @@
+{
+  "name": "esbuild-test",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "node lib/index.js"
+  },
+  "dependencies": {
+    "got": "12.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.17",
+    "esbuild": "0.14.21",
+    "esbuild-node-externals": "1.4.1",
+    "prettier": "2.5.1"
+  }
+}
