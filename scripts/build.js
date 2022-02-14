@@ -8,7 +8,7 @@ require('esbuild')
     minify: true,
     outfile: 'lib/index.js',
     platform: 'node',
-    sourcemap: true,
+    // sourcemap: true,
     target: 'node14',
     // plugins: [nodeExternalsPlugin()],
   })
