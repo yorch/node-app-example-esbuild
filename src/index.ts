@@ -1,15 +1,17 @@
-import got from 'got';
+import { getExternalIP } from './get-external-ip';
+import { getGeoLocation } from './get-geo-location';
 
 const run = async () => {
   try {
-    const { body } = await got.get('https://api.ipify.org', {
-      headers: {
-        'user-agent': 'curl/7.54.1',
-      },
-    });
-    console.log(`Your external IP is ${body.trim()}`);
+    const ipAddress = await getExternalIP();
+    console.log(`Your external IP is ${ipAddress}`);
+    const { city, region, country } = await getGeoLocation(ipAddress);
+    console.log(`Your Geo location is ${city}, ${region}, ${country}`);
   } catch (err) {
-    console.error('There was an error getting your IP address');
+    console.error(
+      'There was an error getting your IP address or Geo location',
+      err
+    );
   }
 };
 
